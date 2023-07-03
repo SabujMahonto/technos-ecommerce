@@ -7,18 +7,22 @@ import Navbar from './Components/Navbar'
 import Home from './Pages/Home'
 import Products from './Pages/Products'
 import Card from './Pages/Card'
+import NotFound from './Pages/NotFound'
 
 function App() {
 
   return (
     <>
-   <Navbar/>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/products' element={<Products/>}/>
-        <Route path='/card' element={<Card/>}/>
-      </Routes>
-   <Footer/>
+    <div className="app min-h-screen bg-gray-50 text-gray-700">
+       <Navbar/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/products' element={<Products/>}/>
+          <Route path='/card' element={<Card/>}/>
+          <Route path='*' element={<NotFound/>}/>
+        </Routes>
+    </div>
+      <Footer/>
     </>
   )
 }
